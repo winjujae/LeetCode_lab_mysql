@@ -1,5 +1,4 @@
 # 1378
-select b.unique_id, a.name
-from Employees a
-left join EmployeeUNI b
-on a.id = b.id
+select eu.unique_id, e.name
+from employees e
+    left outer join employeeuni eu on e.id = eu.id
