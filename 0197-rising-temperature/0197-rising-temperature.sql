@@ -1,4 +1,5 @@
-select today.Id
-from Weather as today
-    inner join Weather as yesterday on DATE_ADD(yesterday.recordDate, INTERVAL 1 DAY) = today.recordDate
-where today.temperature > yesterday.temperature
+select a.id
+from weather a
+    inner join weather b
+    on a.recordDate = date_add(b.recordDate, interval 1 day)
+ where a.temperature > b.temperature
